@@ -1,0 +1,33 @@
+.card {
+    width: 30rem;
+}
+
+.card-body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.list-group-item{
+    margin: 0;
+}
+
+.list-group-item:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.bg-success, .bg-danger {
+    color:white
+}
+
+.progress {
+    margin: 8px;
+}
