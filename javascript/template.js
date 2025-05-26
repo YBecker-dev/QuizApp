@@ -56,13 +56,14 @@ function updateProgressBar() {
 }
 
 function showNextQuestion() {
-  let question = questions[currentquestion];
-  document.getElementById('count-question-1-5').innerText = currentquestion + 1;
-  document.getElementById('count-question').innerText = question['count'];
-  document.getElementById('questiontext').innerText = question['question'];
-  document.getElementById('answer_1').innerText = question['question_1'];
-  document.getElementById('answer_2').innerText = question['question_2'];
-  document.getElementById('answer_3').innerText = question['question_3'];
+    let question = questions[currentquestion];
+    document.getElementById('count-question-1-5').innerText = currentquestion + 1;
+    document.getElementById('count-question').innerText = question.count;
+    document.getElementById('questiontext').innerText = question.question;
+
+    for (let i = 1; i <= 3; i++) {
+        document.getElementById(`answer_${i}`).innerText = question[`question_${i}`];
+    }
 }
 
 function rightAnswerSelected(selectedQuestionNumber, question) {
@@ -82,7 +83,6 @@ function wrongAnswer(idOfRightAnswer, selection) {
 }
 
 function afterLastquestion() {
-  console.log('Fragenanzahl zu Beginn:', questions.length);
   return currentquestion + 1 >= questions.length;
 }
 

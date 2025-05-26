@@ -36,12 +36,10 @@ function nextQuestion() {
 }
 
 function resetAnswerButton() {
-    document.getElementById('answer_1').classList.remove('bg-success');
-    document.getElementById('answer_1').classList.remove('bg-danger');
-    document.getElementById('answer_2').classList.remove('bg-success');
-    document.getElementById('answer_2').classList.remove('bg-danger');
-    document.getElementById('answer_3').classList.remove('bg-success');
-    document.getElementById('answer_3').classList.remove('bg-danger');
+    for (let i = 1; i <= 3; i++) {
+        let btn = document.getElementById(`answer_${i}`);
+        btn.classList.remove('bg-success', 'bg-danger');
+    }
 }
 
 function restartGame() {
